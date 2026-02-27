@@ -1,335 +1,281 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, MapPin, Compass, Sun, Menu, X } from "lucide-react";
+import { ArrowRight, Globe, MapPin, Info, Tag, Menu, X, Plane, Mountain, Trees, Waves } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 // Assets
 import heroBg from "@/assets/images/hero-safari.jpg";
-import tourDesert from "@/assets/images/tour-desert.jpg";
-import tourCoastal from "@/assets/images/tour-coastal.jpg";
+
+const countries = [
+  {
+    name: "Uganda",
+    flag: "🇺🇬",
+    subtitle: "The Pearl of Africa",
+    beauty: "A land of waterfalls, forests, and rare wildlife. Home to endangered mountain gorillas and the source of the Nile.",
+    activities: ["Gorilla trekking", "Wildlife safaris", "Nile boat cruises", "Cultural village tours", "Mountain hiking"],
+    bestTime: "June–September & December–February"
+  },
+  {
+    name: "Tanzania",
+    flag: "🇹🇿",
+    subtitle: "Safari Capital of Africa",
+    beauty: "Endless plains, Africa’s highest mountain, and tropical islands.",
+    activities: ["Serengeti & Ngorongoro safaris", "Mount Kilimanjaro climbing", "Zanzibar beach holidays", "Cultural Maasai visits"],
+    bestTime: "June–October (safari), December–February (beaches)"
+  },
+  {
+    name: "Kenya",
+    flag: "🇰🇪",
+    subtitle: "The Original Safari Experience",
+    beauty: "Famous savannahs, rich tribal culture, and white-sand beaches.",
+    activities: ["Masai Mara game drives", "Maasai cultural tours", "Beach holidays", "Mountain hiking"],
+    bestTime: "July–October & January–March"
+  },
+  {
+    name: "Rwanda",
+    flag: "🇷🇼",
+    subtitle: "Land of a Thousand Hills",
+    beauty: "Clean, green, safe, and scenic with unique primate trekking.",
+    activities: ["Gorilla trekking", "Forest canopy walk", "Lake Kivu relaxation", "Cultural & historical tours"],
+    bestTime: "June–September & December–February"
+  },
+  {
+    name: "Benin",
+    flag: "🇧🇯",
+    subtitle: "Cradle of African Spirituality",
+    beauty: "Ancient kingdoms, voodoo culture, and living history.",
+    activities: ["Royal palace tours", "Ganvié stilt village canoe rides", "Voodoo festival visits", "Slave route heritage tours"],
+    bestTime: "November–March"
+  },
+  {
+    name: "Morocco",
+    flag: "🇲🇦",
+    subtitle: "Where Africa Meets Europe",
+    beauty: "Medinas, deserts, mountains, and vibrant colors.",
+    activities: ["Sahara camel trekking", "Medina shopping tours", "Atlas Mountains trekking", "Food & hammam experiences"],
+    bestTime: "March–May & September–November"
+  },
+  {
+    name: "Algeria",
+    flag: "🇩🇿",
+    subtitle: "Sahara’s Best Kept Secret",
+    beauty: "Vast desert landscapes, Roman ruins, and ancient rock art.",
+    activities: ["Sahara desert expeditions", "Rock art exploration", "Roman ruins tours", "Tuareg cultural experiences"],
+    bestTime: "October–April"
+  }
+];
+
+const pricingData = [
+  { country: "Uganda", budget: "€830 – €1,200", standard: "€1,290 – €1,840", luxury: "€2,120 – €3,220" },
+  { country: "Tanzania", budget: "€1,100 – €1,660", standard: "€1,840 – €2,760", luxury: "€3,220 – €5,060" },
+  { country: "Kenya", budget: "€1,010 – €1,560", standard: "€1,750 – €2,580", luxury: "€2,940 – €4,420" },
+  { country: "Rwanda", budget: "€1,470 – €2,120", standard: "€2,300 – €3,220", luxury: "€3,680 – €5,520" },
+  { country: "Benin", budget: "€640 – €1,010", standard: "€1,100 – €1,660", luxury: "€2,020 – €3,220" },
+  { country: "Morocco", budget: "€550 – €920", standard: "€1,100 – €1,750", luxury: "€2,300 – €3,680" },
+  { country: "Algeria", budget: "€740 – €1,100", standard: "€1,200 – €1,840", luxury: "€2,300 – €3,680" }
+];
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-white">
       {/* Navigation */}
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? "bg-background/95 backdrop-blur-md shadow-sm py-4" : "bg-transparent py-6"
-        }`}
-      >
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-background/95 backdrop-blur-md shadow-md py-4" : "bg-transparent py-8"}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
-          <a href="#" className={`font-serif text-2xl font-bold tracking-wider ${scrolled ? "text-primary" : "text-white"}`}>
+          <a href="#" className={`font-serif text-2xl font-bold tracking-[0.15em] transition-colors duration-300 ${scrolled ? "text-primary" : "text-white"}`}>
             VISIT AFRICA
           </a>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex space-x-8 items-center">
-            {["Destinations", "Tours", "About", "Journal"].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className={`text-sm font-medium tracking-wide uppercase hover:text-primary transition-colors ${
-                  scrolled ? "text-foreground" : "text-white/90"
-                }`}
-              >
+          <div className="hidden md:flex space-x-10 items-center">
+            {["Destinations", "Activities", "Pricing", "About"].map((item) => (
+              <a key={item} href={`#${item.toLowerCase()}`} className={`text-xs font-bold tracking-[0.2em] uppercase transition-all hover:text-primary ${scrolled ? "text-foreground" : "text-white/90"}`}>
                 {item}
               </a>
             ))}
-            <Button
-              className={`rounded-full px-8 ${
-                scrolled 
-                  ? "bg-primary text-white hover:bg-primary/90" 
-                  : "bg-white text-primary hover:bg-white/90"
-              }`}
-            >
-              Book Now
+            <Button className={`rounded-none px-8 font-bold tracking-widest uppercase text-xs transition-all ${scrolled ? "bg-primary text-white hover:bg-primary/90" : "bg-white text-primary hover:bg-white/90"}`}>
+              Inquire Now
             </Button>
           </div>
 
-          {/* Mobile Nav Toggle */}
-          <button 
-            className="md:hidden"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? (
-              <X className={scrolled ? "text-foreground" : "text-white"} />
-            ) : (
-              <Menu className={scrolled ? "text-foreground" : "text-white"} />
-            )}
+          <button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            {mobileMenuOpen ? <X className={scrolled ? "text-foreground" : "text-white"} /> : <Menu className={scrolled ? "text-foreground" : "text-white"} />}
           </button>
         </div>
-
-        {/* Mobile Nav */}
-        {mobileMenuOpen && (
-          <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="absolute top-full left-0 right-0 bg-background shadow-lg py-6 px-6 flex flex-col space-y-4 md:hidden"
-          >
-            {["Destinations", "Tours", "About", "Journal"].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="text-lg font-serif text-foreground hover:text-primary transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item}
-              </a>
-            ))}
-            <Button className="rounded-full w-full bg-primary text-white mt-4">
-              Book Now
-            </Button>
-          </motion.div>
-        )}
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative h-[90vh] md:h-screen w-full flex items-center justify-center">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={heroBg}
-            alt="African Safari Landscape"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
+      {/* Hero */}
+      <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <motion.div initial={{ scale: 1.1 }} animate={{ scale: 1 }} transition={{ duration: 10 }} className="absolute inset-0 z-0">
+          <img src={heroBg} alt="Visit Africa" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/50" />
+        </motion.div>
 
-        <div className="container mx-auto px-6 relative z-10 text-center text-white mt-20">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="block text-sm md:text-base font-sans tracking-[0.2em] uppercase mb-4 text-white/80"
-          >
-            Journey into the wild
-          </motion.span>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-serif font-medium mb-6 leading-tight max-w-4xl mx-auto"
-          >
-            Experience the Soul of Africa
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg md:text-xl font-sans text-white/90 max-w-2xl mx-auto mb-10 leading-relaxed"
-          >
-            From the endless golden dunes of the Sahara to the untamed savannas and breathtaking coastlines. Your adventure awaits.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
-            <Button className="bg-primary hover:bg-primary/90 text-white rounded-full px-10 py-6 text-lg group">
-              Explore Tours 
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+        <div className="container mx-auto px-6 relative z-10 text-center text-white">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <span className="block text-sm md:text-base font-bold tracking-[0.4em] uppercase mb-6 text-primary drop-shadow-lg">
+              Visit Africa Tours & Travel
+            </span>
+            <h1 className="text-5xl md:text-8xl font-serif font-bold mb-8 leading-[1.1] max-w-5xl mx-auto italic">
+              Explore Africa’s Beauty, Culture & Adventure
+            </h1>
+            <p className="text-lg md:text-xl font-sans text-white/80 max-w-2xl mx-auto mb-12 leading-relaxed">
+              From lush rainforests to golden deserts, from gorillas to ancient kingdoms—Africa offers the world’s most diverse and authentic travel experiences.
+            </p>
+            <Button className="bg-primary hover:bg-primary/90 text-white rounded-none px-12 py-8 text-sm font-bold tracking-[0.2em] uppercase group">
+              Start Your Journey
+              <ArrowRight className="ml-3 h-4 w-4 group-hover:translate-x-2 transition-transform" />
             </Button>
           </motion.div>
         </div>
       </section>
 
-      {/* Featured Tours */}
-      <section id="tours" className="py-24 md:py-32 relative bg-background">
+      {/* Intro */}
+      <section id="about" className="py-32 bg-background border-b border-border/50">
+        <div className="container mx-auto px-6 text-center max-w-4xl">
+          <Globe className="h-12 w-12 text-primary mx-auto mb-8 opacity-50" />
+          <h2 className="text-3xl md:text-5xl font-serif mb-10 leading-tight">
+            Our company connects you to nature, culture, and adventure with professionally guided tours and tailor-made packages.
+          </h2>
+          <div className="h-1 w-24 bg-primary mx-auto"></div>
+        </div>
+      </section>
+
+      {/* Destinations Grid */}
+      <section id="destinations" className="py-32 bg-secondary/10">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16 md:mb-24">
-            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Our Signature Experiences</span>
-            <h2 className="text-4xl md:text-5xl font-serif text-foreground">Curated Journeys</h2>
+          <div className="mb-20">
+            <h2 className="text-5xl font-serif mb-4">Countries We Cover</h2>
+            <p className="text-muted-foreground text-lg max-w-xl">We specialize in unforgettable travel experiences across Africa's most iconic landscapes.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {/* Safari Package */}
-            <motion.div 
-              whileHover={{ y: -10 }}
-              className="group bg-card rounded-2xl overflow-hidden shadow-xl border border-border/50 transition-all duration-300 hover:shadow-2xl"
-            >
-              <div className="relative h-64 overflow-hidden">
-                <img src={heroBg} alt="Safari Tour" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm font-semibold text-foreground">
-                  7 Days
-                </div>
-              </div>
-              <div className="p-8">
-                <div className="flex items-center gap-2 text-muted-foreground text-sm mb-3">
-                  <Compass className="h-4 w-4" />
-                  <span>Serengeti, Tanzania</span>
-                </div>
-                <h3 className="text-2xl font-serif mb-3">The Great Migration</h3>
-                <p className="text-muted-foreground mb-6 line-clamp-2">
-                  Witness nature's greatest spectacle. Daily game drives, luxury tented camps, and sundowners over the savanna.
-                </p>
-                <div className="flex justify-between items-center pt-4 border-t border-border">
-                  <div className="font-serif">
-                    <span className="text-sm text-muted-foreground">From</span>
-                    <span className="block text-xl font-medium text-foreground">$1,250</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {countries.map((country, idx) => (
+              <motion.div 
+                key={country.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative bg-card border border-border/40 hover:border-primary/30 transition-all duration-500 overflow-hidden"
+              >
+                <div className="p-10">
+                  <div className="flex justify-between items-start mb-8">
+                    <span className="text-5xl grayscale group-hover:grayscale-0 transition-all duration-500">{country.flag}</span>
+                    <Badge variant="outline" className="rounded-none border-primary/20 text-primary uppercase tracking-widest text-[10px] py-1">
+                      {country.name}
+                    </Badge>
                   </div>
-                  <Button variant="ghost" className="text-primary hover:text-primary hover:bg-primary/10">
-                    Details <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </div>
-            </motion.div>
+                  <h3 className="text-3xl font-serif mb-2 group-hover:text-primary transition-colors">{country.name}</h3>
+                  <p className="text-primary/70 font-bold text-xs uppercase tracking-widest mb-6">{country.subtitle}</p>
+                  <p className="text-muted-foreground mb-10 leading-relaxed italic">"{country.beauty}"</p>
+                  
+                  <div className="space-y-3 mb-10">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-foreground/40 mb-4">Activities</p>
+                    <div className="flex flex-wrap gap-2">
+                      {country.activities.map(act => (
+                        <span key={act} className="text-sm border-b border-border/60 pb-1 text-foreground/80">{act}</span>
+                      ))}
+                    </div>
+                  </div>
 
-            {/* Desert Package */}
-            <motion.div 
-              whileHover={{ y: -10 }}
-              className="group bg-card rounded-2xl overflow-hidden shadow-xl border border-border/50 transition-all duration-300 hover:shadow-2xl"
-            >
-              <div className="relative h-64 overflow-hidden">
-                <img src={tourDesert} alt="Desert Tour" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm font-semibold text-foreground">
-                  5 Days
-                </div>
-              </div>
-              <div className="p-8">
-                <div className="flex items-center gap-2 text-muted-foreground text-sm mb-3">
-                  <Sun className="h-4 w-4" />
-                  <span>Sahara, Morocco</span>
-                </div>
-                <h3 className="text-2xl font-serif mb-3">Dunes & Stars</h3>
-                <p className="text-muted-foreground mb-6 line-clamp-2">
-                  Trek across magnificent sand dunes on camelback, explore ancient kasbahs, and sleep under a blanket of stars.
-                </p>
-                <div className="flex justify-between items-center pt-4 border-t border-border">
-                  <div className="font-serif">
-                    <span className="text-sm text-muted-foreground">From</span>
-                    <span className="block text-xl font-medium text-foreground">$850</span>
+                  <div className="pt-8 border-t border-border/40">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-1">Best Time to Visit</p>
+                    <p className="text-sm font-medium">{country.bestTime}</p>
                   </div>
-                  <Button variant="ghost" className="text-primary hover:text-primary hover:bg-primary/10">
-                    Details <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
                 </div>
-              </div>
-            </motion.div>
-
-            {/* Coastal Package */}
-            <motion.div 
-              whileHover={{ y: -10 }}
-              className="group bg-card rounded-2xl overflow-hidden shadow-xl border border-border/50 transition-all duration-300 hover:shadow-2xl"
-            >
-              <div className="relative h-64 overflow-hidden">
-                <img src={tourCoastal} alt="Coastal Tour" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm font-semibold text-foreground">
-                  10 Days
-                </div>
-              </div>
-              <div className="p-8">
-                <div className="flex items-center gap-2 text-muted-foreground text-sm mb-3">
-                  <MapPin className="h-4 w-4" />
-                  <span>Garden Route, South Africa</span>
-                </div>
-                <h3 className="text-2xl font-serif mb-3">Coastal Wonders</h3>
-                <p className="text-muted-foreground mb-6 line-clamp-2">
-                  Journey along spectacular coastlines, surf world-class waves, and encounter diverse marine life and culture.
-                </p>
-                <div className="flex justify-between items-center pt-4 border-t border-border">
-                  <div className="font-serif">
-                    <span className="text-sm text-muted-foreground">From</span>
-                    <span className="block text-xl font-medium text-foreground">$1,450</span>
-                  </div>
-                  <Button variant="ghost" className="text-primary hover:text-primary hover:bg-primary/10">
-                    Details <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* About / Value Proposition */}
-      <section className="py-24 bg-secondary/30 relative">
+      {/* Pricing Section */}
+      <section id="pricing" className="py-32 bg-background">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="w-full lg:w-1/2">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img src={heroBg} alt="Travelers in Africa" className="w-full h-[600px] object-cover" />
-                <div className="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
-              </div>
-            </div>
-            <div className="w-full lg:w-1/2 lg:pl-10">
-              <span className="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Why Choose Us</span>
-              <h2 className="text-4xl md:text-5xl font-serif mb-6 text-foreground">Travel With Purpose</h2>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed font-sans">
-                We believe travel should be transformative. For over a decade, we've crafted authentic African experiences that connect you deeply with local cultures, preserve magnificent wildlife, and leave you with stories to last a lifetime.
-              </p>
-              
-              <div className="space-y-6">
-                {[
-                  { title: "Expert Local Guides", desc: "Passionate experts who call these lands home." },
-                  { title: "Sustainable Tourism", desc: "Every trip supports local communities and conservation." },
-                  { title: "Tailored Experiences", desc: "Customized itineraries crafted to your exact pace." }
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                      <span className="text-primary font-serif font-bold">{idx + 1}</span>
-                    </div>
-                    <div>
-                      <h4 className="font-serif text-xl font-medium mb-1">{item.title}</h4>
-                      <p className="text-muted-foreground font-sans">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              
-              <Button className="mt-10 bg-foreground text-background hover:bg-foreground/90 rounded-full px-8 py-6 text-lg">
-                Read Our Story
-              </Button>
-            </div>
+          <div className="text-center mb-20 max-w-3xl mx-auto">
+            <Tag className="h-8 w-8 text-primary mx-auto mb-6" />
+            <h2 className="text-5xl font-serif mb-6">Package Pricing</h2>
+            <p className="text-muted-foreground">The prices shown represent the minimum cost, based on selecting the fewest activities. We have structured the pricing around budget-friendly options.</p>
           </div>
+
+          <div className="overflow-hidden border border-border/60 shadow-2xl bg-card">
+            <Table>
+              <TableHeader className="bg-secondary/20">
+                <TableRow className="border-border/60 hover:bg-transparent">
+                  <TableHead className="py-8 font-serif text-xl px-8">Country</TableHead>
+                  <TableHead className="py-8 font-serif text-xl">Budget Package</TableHead>
+                  <TableHead className="py-8 font-serif text-xl">Standard Package</TableHead>
+                  <TableHead className="py-8 font-serif text-xl px-8">Luxury Package</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {pricingData.map((row) => (
+                  <TableRow key={row.country} className="border-border/40 hover:bg-secondary/5 transition-colors group">
+                    <TableCell className="py-6 font-bold px-8 group-hover:text-primary transition-colors">{row.country}</TableCell>
+                    <TableCell className="py-6 font-sans text-muted-foreground">{row.budget}</TableCell>
+                    <TableCell className="py-6 font-sans text-muted-foreground">{row.standard}</TableCell>
+                    <TableCell className="py-6 font-sans text-foreground font-medium px-8">{row.luxury}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+          <p className="mt-8 text-center text-xs text-muted-foreground uppercase tracking-widest italic">Note: Prices are subject to customization based on final itinerary.</p>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-foreground text-white py-16">
+      <footer className="bg-foreground text-white py-24">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-12">
-            <div className="col-span-1 md:col-span-2">
-              <h2 className="font-serif text-2xl font-bold tracking-wider text-primary mb-6">VISIT AFRICA</h2>
-              <p className="text-white/60 max-w-sm mb-6 font-sans">
-                Crafting unforgettable journeys across the African continent. Safari, desert, and coastal adventures tailored for the modern explorer.
+          <div className="flex flex-col md:flex-row justify-between items-start border-b border-white/10 pb-20 gap-16">
+            <div className="max-w-md">
+              <h2 className="font-serif text-3xl font-bold tracking-[0.2em] text-primary mb-8">VISIT AFRICA</h2>
+              <p className="text-white/50 leading-relaxed font-sans text-lg">
+                Professionally guided tours and tailor-made packages connecting you to the heart of Africa.
               </p>
             </div>
-            
-            <div>
-              <h4 className="font-serif text-xl mb-6">Quick Links</h4>
-              <ul className="space-y-3 font-sans text-white/60">
-                <li><a href="#" className="hover:text-primary transition-colors">Our Tours</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Travel Journal</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Contact</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-serif text-xl mb-6">Contact</h4>
-              <ul className="space-y-3 font-sans text-white/60">
-                <li>hello@visitafrica.com</li>
-                <li>+27 (0) 21 555 0123</li>
-                <li>Cape Town, South Africa</li>
-              </ul>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-16">
+              <div>
+                <h4 className="font-serif text-lg mb-6 text-white/90">Navigation</h4>
+                <ul className="space-y-4 text-xs font-bold uppercase tracking-widest text-white/40">
+                  <li><a href="#destinations" className="hover:text-primary transition-colors">Destinations</a></li>
+                  <li><a href="#activities" className="hover:text-primary transition-colors">Activities</a></li>
+                  <li><a href="#pricing" className="hover:text-primary transition-colors">Pricing</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-serif text-lg mb-6 text-white/90">Company</h4>
+                <ul className="space-y-4 text-xs font-bold uppercase tracking-widest text-white/40">
+                  <li><a href="#" className="hover:text-primary transition-colors">Our Story</a></li>
+                  <li><a href="#" className="hover:text-primary transition-colors">Impact</a></li>
+                  <li><a href="#" className="hover:text-primary transition-colors">Contact</a></li>
+                </ul>
+              </div>
             </div>
           </div>
-          
-          <div className="pt-8 flex flex-col md:flex-row justify-between items-center text-white/40 text-sm font-sans">
+          <div className="pt-10 flex flex-col md:flex-row justify-between items-center text-white/20 text-[10px] font-bold uppercase tracking-[0.3em]">
             <p>&copy; 2026 Visit Africa Tours & Travel. All rights reserved.</p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <div className="mt-6 md:mt-0 space-x-10">
+              <a href="#" className="hover:text-white transition-colors">Privacy</a>
+              <a href="#" className="hover:text-white transition-colors">Terms</a>
             </div>
           </div>
         </div>
