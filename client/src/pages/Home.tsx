@@ -20,6 +20,7 @@ const countries = [
   {
     name: "Uganda",
     flag: "🇺🇬",
+    image: "/src/assets/images/uganda-gorilla.jpg",
     subtitle: "The Pearl of Africa",
     beauty: "A land of waterfalls, forests, and rare wildlife. Home to endangered mountain gorillas and the source of the Nile.",
     activities: ["Gorilla trekking", "Wildlife safaris", "Nile boat cruises", "Cultural village tours", "Mountain hiking"],
@@ -28,6 +29,7 @@ const countries = [
   {
     name: "Tanzania",
     flag: "🇹🇿",
+    image: "/src/assets/images/tanzania-kili.jpg",
     subtitle: "Safari Capital of Africa",
     beauty: "Endless plains, Africa’s highest mountain, and tropical islands.",
     activities: ["Serengeti & Ngorongoro safaris", "Mount Kilimanjaro climbing", "Zanzibar beach holidays", "Cultural Maasai visits"],
@@ -36,6 +38,7 @@ const countries = [
   {
     name: "Kenya",
     flag: "🇰🇪",
+    image: "/src/assets/images/hero-safari.jpg",
     subtitle: "The Original Safari Experience",
     beauty: "Famous savannahs, rich tribal culture, and white-sand beaches.",
     activities: ["Masai Mara game drives", "Maasai cultural tours", "Beach holidays", "Mountain hiking"],
@@ -44,6 +47,7 @@ const countries = [
   {
     name: "Rwanda",
     flag: "🇷🇼",
+    image: "/src/assets/images/tour-coastal.jpg",
     subtitle: "Land of a Thousand Hills",
     beauty: "Clean, green, safe, and scenic with unique primate trekking.",
     activities: ["Gorilla trekking", "Forest canopy walk", "Lake Kivu relaxation", "Cultural & historical tours"],
@@ -52,6 +56,7 @@ const countries = [
   {
     name: "Benin",
     flag: "🇧🇯",
+    image: "/src/assets/images/hero-safari.jpg",
     subtitle: "Cradle of African Spirituality",
     beauty: "Ancient kingdoms, voodoo culture, and living history.",
     activities: ["Royal palace tours", "Ganvié stilt village canoe rides", "Voodoo festival visits", "Slave route heritage tours"],
@@ -60,6 +65,7 @@ const countries = [
   {
     name: "Morocco",
     flag: "🇲🇦",
+    image: "/src/assets/images/morocco-medina.jpg",
     subtitle: "Where Africa Meets Europe",
     beauty: "Medinas, deserts, mountains, and vibrant colors.",
     activities: ["Sahara camel trekking", "Medina shopping tours", "Atlas Mountains trekking", "Food & hammam experiences"],
@@ -68,6 +74,7 @@ const countries = [
   {
     name: "Algeria",
     flag: "🇩🇿",
+    image: "/src/assets/images/tour-desert.jpg",
     subtitle: "Sahara’s Best Kept Secret",
     beauty: "Vast desert landscapes, Roman ruins, and ancient rock art.",
     activities: ["Sahara desert expeditions", "Rock art exploration", "Roman ruins tours", "Tuareg cultural experiences"],
@@ -100,9 +107,16 @@ export default function Home() {
       {/* Navigation */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-background/95 backdrop-blur-md shadow-md py-4" : "bg-transparent py-8"}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
-          <a href="#" className={`font-serif text-2xl font-bold tracking-[0.15em] transition-colors duration-300 ${scrolled ? "text-primary" : "text-white"}`}>
-            VISIT AFRICA
-          </a>
+          <div className="flex flex-col">
+            <a href="#" className={`font-serif text-2xl font-bold tracking-[0.15em] transition-colors duration-300 ${scrolled ? "text-primary" : "text-white"}`}>
+              VISIT AFRICA
+            </a>
+            {!scrolled && (
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/60 -mt-1">
+                Tours & Travel
+              </span>
+            )}
+          </div>
 
           <div className="hidden md:flex space-x-10 items-center">
             {["Destinations", "Activities", "Pricing", "About"].map((item) => (
@@ -115,7 +129,7 @@ export default function Home() {
             </Button>
           </div>
 
-          <button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          <button className="md:hidden invisible">
             {mobileMenuOpen ? <X className={scrolled ? "text-foreground" : "text-white"} /> : <Menu className={scrolled ? "text-foreground" : "text-white"} />}
           </button>
         </div>
@@ -139,7 +153,10 @@ export default function Home() {
             <p className="text-lg md:text-xl font-sans text-white/80 max-w-2xl mx-auto mb-12 leading-relaxed">
               From lush rainforests to golden deserts, from gorillas to ancient kingdoms—Africa offers the world’s most diverse and authentic travel experiences.
             </p>
-            <Button className="bg-primary hover:bg-primary/90 text-white rounded-none px-12 py-8 text-sm font-bold tracking-[0.2em] uppercase group">
+            <Button 
+              onClick={() => document.getElementById('destinations')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-primary hover:bg-primary/90 text-white rounded-none px-12 py-8 text-sm font-bold tracking-[0.2em] uppercase group"
+            >
               Start Your Journey
               <ArrowRight className="ml-3 h-4 w-4 group-hover:translate-x-2 transition-transform" />
             </Button>
@@ -176,9 +193,19 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="group relative bg-card border border-border/40 hover:border-primary/30 transition-all duration-500 overflow-hidden"
               >
+                <div className="relative h-64 overflow-hidden">
+                  <img 
+                    src={country.image} 
+                    alt={country.name} 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+                  <div className="absolute top-6 left-6">
+                    <span className="text-4xl drop-shadow-lg">{country.flag}</span>
+                  </div>
+                </div>
                 <div className="p-10">
-                  <div className="flex justify-between items-start mb-8">
-                    <span className="text-5xl grayscale group-hover:grayscale-0 transition-all duration-500">{country.flag}</span>
+                  <div className="flex justify-between items-start mb-4">
                     <Badge variant="outline" className="rounded-none border-primary/20 text-primary uppercase tracking-widest text-[10px] py-1">
                       {country.name}
                     </Badge>
