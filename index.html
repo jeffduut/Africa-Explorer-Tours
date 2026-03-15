@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visit Africa Tours & Travel</title>
+  
+  <meta property="og:title" content="Visit Africa Tours & Travel" />
+  <meta property="og:description" content="Explore Africa’s Beauty, Culture & Adventure." />
+  <meta property="og:type" content="website" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="navbar" class="navbar">
+    <div class="container nav-container">
+      <div class="logo-container">
+        <a href="#" class="logo">VISIT AFRICA</a>
+        <span id="logo-subtitle" class="logo-subtitle">Tours & Travel</span>
+      </div>
+
+      <div class="nav-links">
+        <a href="#destinations">Destinations</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+        <a href="#destinations" class="btn-inquire">Inquire Now</a>
+      </div>
+
+      <button id="mobile-menu-btn" class="mobile-menu-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu hidden">
+      <a href="#destinations" class="mobile-link">Destinations</a>
+      <a href="#pricing" class="mobile-link">Pricing</a>
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#destinations" class="btn-inquire mobile-inquire">Inquire Now</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-bg">
+      <img src="images/hero-safari.jpg" alt="African Safari">
+      <div class="hero-overlay"></div>
+    </div>
+    
+    <div class="container hero-content fade-in">
+      <span class="hero-subtitle">Visit Africa Tours & Travel</span>
+      <h1 class="hero-title">Explore Africa’s Beauty, Culture & Adventure</h1>
+      <p class="hero-text">From lush rainforests to golden deserts, from gorillas to ancient kingdoms—Africa offers the world’s most diverse and authentic travel experiences.</p>
+      <a href="#destinations" class="btn-primary">
+        Start Your Journey
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Intro Section -->
+  <section id="about" class="intro-section">
+    <div class="container text-center">
+      <svg class="intro-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+      <h2 class="intro-title slide-up">Our company connects you to nature, culture, and adventure with professionally guided tours and tailor-made packages.</h2>
+      <div class="divider"></div>
+    </div>
+  </section>
+
+  <!-- Destinations Section -->
+  <section id="destinations" class="destinations-section">
+    <div class="container">
+      <div class="section-header slide-up">
+        <h2 class="section-title">Countries We Cover</h2>
+        <p class="section-desc">We specialize in unforgettable travel experiences across Africa's most iconic landscapes.</p>
+      </div>
+
+      <div class="grid">
+        
+        <!-- Uganda -->
+        <div class="card slide-up">
+          <div class="card-img-wrapper">
+            <img src="images/uganda-gorilla.jpg" alt="Uganda" class="card-img">
+            <div class="card-overlay"></div>
+            <div class="card-flag">🇺🇬</div>
+          </div>
+          <div class="card-body">
+            <div class="card-badge">Uganda</div>
+            <h3 class="card-title">Uganda</h3>
+            <p class="card-subtitle">The Pearl of Africa</p>
+            <p class="card-beauty">"A land of waterfalls, forests, and rare wildlife. Home to endangered mountain gorillas and the source of the Nile."</p>
+            
+            <div class="activities-container">
+              <span class="activities-label">Activities</span>
+              <div class="tags">
+                <span class="tag">Gorilla trekking</span>
+                <span class="tag">Wildlife safaris</span>
+                <span class="tag">Nile boat cruises</span>
+                <span class="tag">Cultural village tours</span>
+                <span class="tag">Mountain hiking</span>
+              </div>
+            </div>
+            <div class="best-time">
+              <span class="best-time-label">Best Time to Visit</span>
+              <p>June–September & December–February</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tanzania -->
+        <div class="card slide-up" style="transition-delay: 0.1s;">
+          <div class="card-img-wrapper">
+            <img src="images/tanzania-kili.jpg" alt="Tanzania" class="card-img">
+            <div class="card-overlay"></div>
+            <div class="card-flag">🇹🇿</div>
+          </div>
+          <div class="card-body">
+            <div class="card-badge">Tanzania</div>
+            <h3 class="card-title">Tanzania</h3>
+            <p class="card-subtitle">Safari Capital of Africa</p>
+            <p class="card-beauty">"Endless plains, Africa’s highest mountain, and tropical islands."</p>
+            
+            <div class="activities-container">
+              <span class="activities-label">Activities</span>
+              <div class="tags">
+                <span class="tag">Serengeti & Ngorongoro safaris</span>
+                <span class="tag">Mount Kilimanjaro climbing</span>
+                <span class="tag">Zanzibar beach holidays</span>
+                <span class="tag">Cultural Maasai visits</span>
+              </div>
+            </div>
+            <div class="best-time">
+              <span class="best-time-label">Best Time to Visit</span>
+              <p>June–October (safari), December–February (beaches)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kenya -->
+        <div class="card slide-up" style="transition-delay: 0.2s;">
+          <div class="card-img-wrapper">
+            <img src="images/hero-safari.jpg" alt="Kenya" class="card-img">
+            <div class="card-overlay"></div>
+            <div class="card-flag">🇰🇪</div>
+          </div>
+          <div class="card-body">
+            <div class="card-badge">Kenya</div>
+            <h3 class="card-title">Kenya</h3>
+            <p class="card-subtitle">The Original Safari Experience</p>
+            <p class="card-beauty">"Famous savannahs, rich tribal culture, and white-sand beaches."</p>
+            
+            <div class="activities-container">
+              <span class="activities-label">Activities</span>
+              <div class="tags">
+                <span class="tag">Masai Mara game drives</span>
+                <span class="tag">Maasai cultural tours</span>
+                <span class="tag">Beach holidays</span>
+                <span class="tag">Mountain hiking</span>
+              </div>
+            </div>
+            <div class="best-time">
+              <span class="best-time-label">Best Time to Visit</span>
+              <p>July–October & January–March</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rwanda -->
+        <div class="card slide-up">
+          <div class="card-img-wrapper">
+            <img src="images/tour-coastal.jpg" alt="Rwanda" class="card-img">
+            <div class="card-overlay"></div>
+            <div class="card-flag">🇷🇼</div>
+          </div>
+          <div class="card-body">
+            <div class="card-badge">Rwanda</div>
+            <h3 class="card-title">Rwanda</h3>
+            <p class="card-subtitle">Land of a Thousand Hills</p>
+            <p class="card-beauty">"Clean, green, safe, and scenic with unique primate trekking."</p>
+            
+            <div class="activities-container">
+              <span class="activities-label">Activities</span>
+              <div class="tags">
+                <span class="tag">Gorilla trekking</span>
+                <span class="tag">Forest canopy walk</span>
+                <span class="tag">Lake Kivu relaxation</span>
+                <span class="tag">Cultural & historical tours</span>
+              </div>
+            </div>
+            <div class="best-time">
+              <span class="best-time-label">Best Time to Visit</span>
+              <p>June–September & December–February</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Benin -->
+        <div class="card slide-up" style="transition-delay: 0.1s;">
+          <div class="card-img-wrapper">
+            <img src="images/hero-safari.jpg" alt="Benin" class="card-img">
+            <div class="card-overlay"></div>
+            <div class="card-flag">🇧🇯</div>
+          </div>
+          <div class="card-body">
+            <div class="card-badge">Benin</div>
+            <h3 class="card-title">Benin</h3>
+            <p class="card-subtitle">Cradle of African Spirituality</p>
+            <p class="card-beauty">"Ancient kingdoms, voodoo culture, and living history."</p>
+            
+            <div class="activities-container">
+              <span class="activities-label">Activities</span>
+              <div class="tags">
+                <span class="tag">Royal palace tours</span>
+                <span class="tag">Ganvié stilt village canoe rides</span>
+                <span class="tag">Voodoo festival visits</span>
+                <span class="tag">Slave route heritage tours</span>
+              </div>
+            </div>
+            <div class="best-time">
+              <span class="best-time-label">Best Time to Visit</span>
+              <p>November–March</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Morocco -->
+        <div class="card slide-up" style="transition-delay: 0.2s;">
+          <div class="card-img-wrapper">
+            <img src="images/morocco-medina.jpg" alt="Morocco" class="card-img">
+            <div class="card-overlay"></div>
+            <div class="card-flag">🇲🇦</div>
+          </div>
+          <div class="card-body">
+            <div class="card-badge">Morocco</div>
+            <h3 class="card-title">Morocco</h3>
+            <p class="card-subtitle">Where Africa Meets Europe</p>
+            <p class="card-beauty">"Medinas, deserts, mountains, and vibrant colors."</p>
+            
+            <div class="activities-container">
+              <span class="activities-label">Activities</span>
+              <div class="tags">
+                <span class="tag">Sahara camel trekking</span>
+                <span class="tag">Medina shopping tours</span>
+                <span class="tag">Atlas Mountains trekking</span>
+                <span class="tag">Food & hammam experiences</span>
+              </div>
+            </div>
+            <div class="best-time">
+              <span class="best-time-label">Best Time to Visit</span>
+              <p>March–May & September–November</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Algeria -->
+        <div class="card slide-up">
+          <div class="card-img-wrapper">
+            <img src="images/tour-desert.jpg" alt="Algeria" class="card-img">
+            <div class="card-overlay"></div>
+            <div class="card-flag">🇩🇿</div>
+          </div>
+          <div class="card-body">
+            <div class="card-badge">Algeria</div>
+            <h3 class="card-title">Algeria</h3>
+            <p class="card-subtitle">Sahara’s Best Kept Secret</p>
+            <p class="card-beauty">"Vast desert landscapes, Roman ruins, and ancient rock art."</p>
+            
+            <div class="activities-container">
+              <span class="activities-label">Activities</span>
+              <div class="tags">
+                <span class="tag">Sahara desert expeditions</span>
+                <span class="tag">Rock art exploration</span>
+                <span class="tag">Roman ruins tours</span>
+                <span class="tag">Tuareg cultural experiences</span>
+              </div>
+            </div>
+            <div class="best-time">
+              <span class="best-time-label">Best Time to Visit</span>
+              <p>October–April</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="pricing-section">
+    <div class="container">
+      <div class="section-header text-center slide-up">
+        <svg class="pricing-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <h2 class="section-title">Package Pricing</h2>
+        <p class="section-desc mx-auto">The prices shown represent the minimum cost, based on selecting the fewest activities. We have structured the pricing around budget-friendly options.</p>
+      </div>
+
+      <div class="table-container slide-up">
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Country</th>
+              <th>Budget Package</th>
+              <th>Standard Package</th>
+              <th>Luxury Package</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Uganda</strong></td>
+              <td>€830 – €1,200</td>
+              <td>€1,290 – €1,840</td>
+              <td><strong>€2,120 – €3,220</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Tanzania</strong></td>
+              <td>€1,100 – €1,660</td>
+              <td>€1,840 – €2,760</td>
+              <td><strong>€3,220 – €5,060</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Kenya</strong></td>
+              <td>€1,010 – €1,560</td>
+              <td>€1,750 – €2,580</td>
+              <td><strong>€2,940 – €4,420</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Rwanda</strong></td>
+              <td>€1,470 – €2,120</td>
+              <td>€2,300 – €3,220</td>
+              <td><strong>€3,680 – €5,520</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Benin</strong></td>
+              <td>€640 – €1,010</td>
+              <td>€1,100 – €1,660</td>
+              <td><strong>€2,020 – €3,220</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Morocco</strong></td>
+              <td>€550 – €920</td>
+              <td>€1,100 – €1,750</td>
+              <td><strong>€2,300 – €3,680</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Algeria</strong></td>
+              <td>€740 – €1,100</td>
+              <td>€1,200 – €1,840</td>
+              <td><strong>€2,300 – €3,680</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="pricing-note">Note: Prices are subject to customization based on final itinerary.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h2 class="footer-logo">VISIT AFRICA</h2>
+          <p class="footer-desc">Professionally guided tours and tailor-made packages connecting you to the heart of Africa.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Impact</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Visit Africa Tours & Travel. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
