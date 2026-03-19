@@ -134,6 +134,14 @@
   .price-table { width:100%; border-collapse:collapse; margin-top:40px; background:#fff; border-radius:6px; overflow:hidden; box-shadow:0 4px 24px rgba(0,0,0,0.06); }
   .price-table th { background:var(--deep-green); color:var(--gold); font-family:'Cinzel',serif; font-size:11px; letter-spacing:2px; padding:18px 24px; text-align:left; font-weight:400; }
   .price-table td { padding:14px 24px; font-size:13px; color:#444; border-bottom:1px solid rgba(0,0,0,0.05); }
+  
+  /* Responsive Table */
+  .table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 40px; }
+  .table-responsive .price-table { margin-top: 0; }
+  @media(max-width: 768px) {
+    .price-table th { padding: 12px 10px; font-size: 10px; letter-spacing: 1px; }
+    .price-table td { padding: 12px 10px; font-size: 12px; }
+  }
   .price-table tr:last-child td { border-bottom:none; }
   .price-table tr:hover td { background:rgba(44,95,45,0.03); }
   .price-table td:first-child { font-weight:700; color:var(--deep-green); font-family:'Playfair Display',serif; }
@@ -303,19 +311,68 @@
         </ul></div>
       </div>
     </div>
-    <table class="price-table">
-      <thead><tr><th>Destination</th><th>Budget Package</th><th>Standard Package</th><th>Luxury Package</th></tr></thead>
-      <tbody>
-        <tr><td>🇺🇬 Uganda</td><td class="budget-price">€830 – €1,200</td><td class="standard-price">€1,290 – €1,840</td><td class="luxury-price">€7,000 – €15,000</td></tr>
-        <tr><td>🇹🇿 Tanzania</td><td class="budget-price">€1,100 – €1,660</td><td class="standard-price">€1,840 – €2,760</td><td class="luxury-price">€7,220 – €15,060</td></tr>
-        <tr><td>🇰🇪 Kenya</td><td class="budget-price">€1,010 – €1,560</td><td class="standard-price">€1,750 – €2,580</td><td class="luxury-price">€9,940 – €15,420</td></tr>
-        <tr><td>🇷🇼 Rwanda</td><td class="budget-price">€1,470 – €2,120</td><td class="standard-price">€2,300 – €3,220</td><td class="luxury-price">€7,680 – €15,520</td></tr>
-        <tr><td>🇧🇯 Benin</td><td class="budget-price">€640 – €1,010</td><td class="standard-price">€1,100 – €1,660</td><td class="luxury-price">€6,020 – €10,220</td></tr>
-        <tr><td>🇲🇦 Morocco</td><td class="budget-price">€550 – €920</td><td class="standard-price">€1,100 – €1,750</td><td class="luxury-price">€6,300 – €13,680</td></tr>
-        <tr><td>🇩🇿 Algeria</td><td class="budget-price">€740 – €1,100</td><td class="standard-price">€1,200 – €1,840</td><td class="luxury-price">€7,300 – €13,680</td></tr>
-        <tr style="background:rgba(212,160,23,0.06)"><td>🌍 Other African Countries</td><td class="budget-price">Custom Quote</td><td class="standard-price">Custom Quote</td><td class="luxury-price">Custom Quote</td></tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th>Destination</th>
+            <th>Budget Package</th>
+            <th>Standard Package</th>
+            <th>Luxury Package</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>🇺🇬 Uganda</td>
+            <td class="budget-price">€830 – €1,200</td>
+            <td class="standard-price">€1,290 – €1,840</td>
+            <td class="luxury-price">€7,000 – €15,000</td>
+          </tr>
+          <tr>
+            <td>🇹🇿 Tanzania</td>
+            <td class="budget-price">€1,100 – €1,660</td>
+            <td class="standard-price">€1,840 – €2,760</td>
+            <td class="luxury-price">€7,220 – €15,060</td>
+          </tr>
+          <tr>
+            <td>🇰🇪 Kenya</td>
+            <td class="budget-price">€1,010 – €1,560</td>
+            <td class="standard-price">€1,750 – €2,580</td>
+            <td class="luxury-price">€9,940 – €15,420</td>
+          </tr>
+          <tr>
+            <td>🇷🇼 Rwanda</td>
+            <td class="budget-price">€1,470 – €2,120</td>
+            <td class="standard-price">€2,300 – €3,220</td>
+            <td class="luxury-price">€7,680 – €15,520</td>
+          </tr>
+          <tr>
+            <td>🇧🇯 Benin</td>
+            <td class="budget-price">€640 – €1,010</td>
+            <td class="standard-price">€1,100 – €1,660</td>
+            <td class="luxury-price">€6,020 – €10,220</td>
+          </tr>
+          <tr>
+            <td>🇲🇦 Morocco</td>
+            <td class="budget-price">€550 – €920</td>
+            <td class="standard-price">€1,100 – €1,750</td>
+            <td class="luxury-price">€6,300 – €13,680</td>
+          </tr>
+          <tr>
+            <td>🇩🇿 Algeria</td>
+            <td class="budget-price">€740 – €1,100</td>
+            <td class="standard-price">€1,200 – €1,840</td>
+            <td class="luxury-price">€7,300 – €13,680</td>
+          </tr>
+          <tr style="background:rgba(212,160,23,0.06)">
+            <td>🌍 Other African Countries</td>
+            <td class="budget-price">Custom Quote</td>
+            <td class="standard-price">Custom Quote</td>
+            <td class="luxury-price">Custom Quote</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <p style="text-align:center;font-size:12px;color:#999;margin-top:16px;font-style:italic;">* Prices represent minimum costs based on 5-day itinerary with core activities. Custom quotes available for all destinations.</p>
   </div>
 </div>
