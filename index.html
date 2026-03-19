@@ -69,12 +69,96 @@
     </div>
   </header>
 
-  <!-- Intro Section -->
-  <section id="about" class="intro-section">
-    <div class="container text-center">
-      <svg class="intro-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-      <h2 class="intro-title slide-up">Our company connects you to nature, culture, and adventure with professionally guided tours and tailor-made packages.</h2>
-      <div class="divider"></div>
+  <!-- About Section -->
+  <section id="about" class="intro-section" style="text-align: left;">
+    <div class="container">
+      <div style="display: flex; flex-wrap: wrap; gap: 4rem;">
+        <div class="slide-up" id="our-story" style="flex: 1 1 400px;">
+          <svg class="intro-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1.5rem; margin-left: 0;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <h2 class="section-title">Our Story</h2>
+          <div class="divider" style="margin: 1.5rem 0; width: 60px;"></div>
+          <p class="section-desc" style="max-width: 100%; margin-bottom: 1rem;">We are a people-centred tourism company creating authentic African experiences. Our mission is to connect travelers with the real Africa i.e. its people, cultures.</p>
+          <p class="section-desc" style="max-width: 100%; margin-bottom: 1rem;">From lush rainforests to golden deserts, from gorillas to ancient kingdoms. Africa offers the world's most diverse and authentic travel experiences.</p>
+          <p class="section-desc" style="max-width: 100%;">Our company connects you to nature, culture, and adventure with professionally guided tours and tailor-made packages.</p>
+        </div>
+        <div class="slide-up" id="our-impact" style="flex: 1 1 400px; transition-delay: 0.2s;">
+          <svg class="intro-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1.5rem; margin-left: 0;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <h2 class="section-title">Our Impact</h2>
+          <div class="divider" style="margin: 1.5rem 0; width: 60px;"></div>
+          <p class="section-desc" style="max-width: 100%;">Every journey leaves a deeper understanding of who we are and what we aspire to become as a continent.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Can I Do Section -->
+  <section id="what-to-do" style="padding: 8rem 0; background-color: var(--card-bg);">
+    <div class="container">
+      <div class="section-header text-center slide-up">
+        <h2 class="section-title">What Can I Do In Africa?</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="grid" style="margin-top: 4rem;">
+        
+        <!-- Category 1 -->
+        <div class="slide-up" style="background-color: var(--bg); padding: 2.5rem; border-radius: 8px; border: 1px solid rgba(217, 210, 199, 0.4);">
+          <h3 style="color: var(--primary); margin-bottom: 2rem; font-size: 1.25rem; font-family: var(--font-serif); font-weight: 700; text-align: center;">Wildlife &amp; Nature</h3>
+          <div class="tags" style="gap: 0;">
+            <span class="tag" style="padding: 0.75rem 0;">Safari game drives</span>
+            <span class="tag" style="padding: 0.75rem 0;">Walking safaris</span>
+            <span class="tag" style="padding: 0.75rem 0;">Birdwatching</span>
+            <span class="tag" style="padding: 0.75rem 0;">Whale watching</span>
+            <span class="tag" style="padding: 0.75rem 0;">Gorilla trekking</span>
+            <span class="tag" style="padding: 0.75rem 0;">Chimpanzee trekking</span>
+            <span class="tag" style="padding: 0.75rem 0;">Elephant tracking</span>
+            <span class="tag" style="padding: 0.75rem 0;">Wildlife photography</span>
+            <span class="tag" style="padding: 0.75rem 0;">Night safaris</span>
+            <span class="tag" style="padding: 0.75rem 0;">Canoe safaris</span>
+            <span class="tag" style="padding: 0.75rem 0;">River cruises</span>
+            <span class="tag" style="padding: 0.75rem 0;">Visiting wildlife sanctuaries</span>
+            <span class="tag" style="padding: 0.75rem 0;">Visiting national parks</span>
+            <span class="tag" style="padding: 0.75rem 0;">Visiting botanical gardens</span>
+          </div>
+        </div>
+
+        <!-- Category 2 -->
+        <div class="slide-up" style="background-color: var(--bg); padding: 2.5rem; border-radius: 8px; border: 1px solid rgba(217, 210, 199, 0.4); transition-delay: 0.1s;">
+          <h3 style="color: var(--primary); margin-bottom: 2rem; font-size: 1.25rem; font-family: var(--font-serif); font-weight: 700; text-align: center;">Adventure &amp; Outdoor Activities</h3>
+          <div class="tags" style="gap: 0;">
+            <span class="tag" style="padding: 0.75rem 0;">Hiking</span>
+            <span class="tag" style="padding: 0.75rem 0;">Mountain climbing</span>
+            <span class="tag" style="padding: 0.75rem 0;">Rock climbing</span>
+            <span class="tag" style="padding: 0.75rem 0;">Dune bashing</span>
+            <span class="tag" style="padding: 0.75rem 0;">Camel trekking</span>
+            <span class="tag" style="padding: 0.75rem 0;">Horseback riding</span>
+            <span class="tag" style="padding: 0.75rem 0;">Mountain biking</span>
+            <span class="tag" style="padding: 0.75rem 0;">Ziplining</span>
+            <span class="tag" style="padding: 0.75rem 0;">Paragliding</span>
+            <span class="tag" style="padding: 0.75rem 0;">Skydiving</span>
+            <span class="tag" style="padding: 0.75rem 0;">Bungee jumping</span>
+            <span class="tag" style="padding: 0.75rem 0;">Camping</span>
+            <span class="tag" style="padding: 0.75rem 0;">Quad biking (ATV)</span>
+            <span class="tag" style="padding: 0.75rem 0;">Hot-air balloon rides</span>
+          </div>
+        </div>
+
+        <!-- Category 3 -->
+        <div class="slide-up" style="background-color: var(--bg); padding: 2.5rem; border-radius: 8px; border: 1px solid rgba(217, 210, 199, 0.4); transition-delay: 0.2s;">
+          <h3 style="color: var(--primary); margin-bottom: 2rem; font-size: 1.25rem; font-family: var(--font-serif); font-weight: 700; text-align: center;">Cultural &amp; Historical Activities</h3>
+          <div class="tags" style="gap: 0;">
+            <span class="tag" style="padding: 0.75rem 0;">Visiting historical monuments</span>
+            <span class="tag" style="padding: 0.75rem 0;">Visiting museums</span>
+            <span class="tag" style="padding: 0.75rem 0;">Exploring ancient ruins</span>
+            <span class="tag" style="padding: 0.75rem 0;">Touring old cities</span>
+            <span class="tag" style="padding: 0.75rem 0;">Visiting UNESCO heritage sites</span>
+            <span class="tag" style="padding: 0.75rem 0;">Attending cultural festivals</span>
+            <span class="tag" style="padding: 0.75rem 0;">Watching traditional dance performances</span>
+            <span class="tag" style="padding: 0.75rem 0;">Visiting traditional villages</span>
+            <span class="tag" style="padding: 0.75rem 0;">Storytelling nights with local communities</span>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -93,7 +177,6 @@
           <div class="card-img-wrapper">
             <img src="images/uganda-gorilla.jpg" alt="Uganda" class="card-img">
             <div class="card-overlay"></div>
-            <div class="card-flag">🇺🇬</div>
           </div>
           <div class="card-body">
             <div class="card-badge">Uganda</div>
@@ -123,7 +206,6 @@
           <div class="card-img-wrapper">
             <img src="images/tanzania-kili.jpg" alt="Tanzania" class="card-img">
             <div class="card-overlay"></div>
-            <div class="card-flag">🇹🇿</div>
           </div>
           <div class="card-body">
             <div class="card-badge">Tanzania</div>
@@ -152,7 +234,6 @@
           <div class="card-img-wrapper">
             <img src="images/hero-safari.jpg" alt="Kenya" class="card-img">
             <div class="card-overlay"></div>
-            <div class="card-flag">🇰🇪</div>
           </div>
           <div class="card-body">
             <div class="card-badge">Kenya</div>
@@ -181,7 +262,6 @@
           <div class="card-img-wrapper">
             <img src="images/tour-coastal.jpg" alt="Rwanda" class="card-img">
             <div class="card-overlay"></div>
-            <div class="card-flag">🇷🇼</div>
           </div>
           <div class="card-body">
             <div class="card-badge">Rwanda</div>
@@ -210,7 +290,6 @@
           <div class="card-img-wrapper">
             <img src="images/hero-safari.jpg" alt="Benin" class="card-img">
             <div class="card-overlay"></div>
-            <div class="card-flag">🇧🇯</div>
           </div>
           <div class="card-body">
             <div class="card-badge">Benin</div>
@@ -239,7 +318,6 @@
           <div class="card-img-wrapper">
             <img src="images/morocco-medina.jpg" alt="Morocco" class="card-img">
             <div class="card-overlay"></div>
-            <div class="card-flag">🇲🇦</div>
           </div>
           <div class="card-body">
             <div class="card-badge">Morocco</div>
@@ -268,7 +346,6 @@
           <div class="card-img-wrapper">
             <img src="images/tour-desert.jpg" alt="Algeria" class="card-img">
             <div class="card-overlay"></div>
-            <div class="card-flag">🇩🇿</div>
           </div>
           <div class="card-body">
             <div class="card-badge">Algeria</div>
@@ -288,6 +365,32 @@
             <div class="best-time">
               <span class="best-time-label">Best Time to Visit</span>
               <p>October–April</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other African Countries -->
+        <div class="card slide-up" style="transition-delay: 0.1s;">
+          <div class="card-img-wrapper">
+            <img src="images/hero-safari.jpg" alt="Other African Countries" class="card-img">
+            <div class="card-overlay"></div>
+          </div>
+          <div class="card-body">
+            <div class="card-badge">Any Destination</div>
+            <h3 class="card-title">Other African Countries</h3>
+            <p class="card-subtitle">Your Dream Destination</p>
+            <p class="card-beauty">"All of Africa is within reach. We cover the entire continent to craft a fully tailored itinerary."</p>
+            
+            <div class="activities-container">
+              <span class="activities-label">How It Works</span>
+              <div class="tags">
+                <span class="tag">Choose any country including those listed above and we guide on activities.</span>
+                <span class="tag">Choose an Activity and we guide you which countries are best for that or those particular activities.</span>
+              </div>
+            </div>
+            <div class="best-time">
+              <span class="best-time-label">Best Time to Visit</span>
+              <p>All year round</p>
             </div>
           </div>
         </div>
@@ -368,8 +471,8 @@
         <div class="footer-links">
           <h4>Company</h4>
           <ul>
-            <li><a href="#">Our Story</a></li>
-            <li><a href="#">Impact</a></li>
+            <li><a href="#our-story">Our Story</a></li>
+            <li><a href="#our-impact">Impact</a></li>
             <li><a href="mailto:visitafrica21@gmail.com">Contact</a></li>
           </ul>
         </div>

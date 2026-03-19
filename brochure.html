@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Visit Africa Tours & Travel – Brochure</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+<script src="script.js" defer></script>
 <style>
   :root {
     --gold: #D4A017;
@@ -18,6 +19,32 @@
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Lato', sans-serif; background: var(--cream); color: var(--dark); overflow-x: hidden; }
+
+  /* Navigation */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 50; padding: 2rem 0; transition: all 0.4s ease; color: #fff; text-decoration: none; font-family: 'Lato', sans-serif; }
+  .navbar.scrolled { background-color: rgba(249, 246, 240, 0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 1rem 0; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); color: #2A2421; }
+  .nav-container { display: flex; justify-content: space-between; align-items: center; }
+  .logo-container { display: flex; flex-direction: column; }
+  .navbar .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; letter-spacing: 0.15em; color: inherit; text-decoration: none;}
+  .navbar.scrolled .logo { color: #C84B31; }
+  .logo-subtitle { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255, 255, 255, 0.6); margin-top: -2px; transition: opacity 0.3s; }
+  .navbar.scrolled .logo-subtitle { opacity: 0; visibility: hidden; }
+  .nav-links { display: none; align-items: center; gap: 2.5rem; }
+  @media (min-width: 768px) { .nav-links { display: flex; } }
+  .nav-links a:not(.btn-inquire) { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.9); transition: color 0.3s; text-decoration: none; }
+  .navbar.scrolled .nav-links a:not(.btn-inquire) { color: #2A2421; }
+  .nav-links a:not(.btn-inquire):hover { color: #C84B31 !important; }
+  .btn-inquire { padding: 0.75rem 2rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; background-color: #fff; color: #C84B31; transition: all 0.3s; cursor: pointer; text-decoration: none; display: inline-block; border-radius: 4px; border: none; }
+  .btn-inquire:hover { background-color: rgba(255,255,255,0.9); }
+  .navbar.scrolled .btn-inquire { background-color: #C84B31; color: #fff; }
+  .navbar.scrolled .btn-inquire:hover { background-color: #b33e24; }
+  .mobile-menu-btn { display: block; background: none; border: none; color: inherit; cursor: pointer; }
+  @media (min-width: 768px) { .mobile-menu-btn { display: none; } }
+  .mobile-menu { position: absolute; top: 100%; left: 0; right: 0; background-color: #F9F6F0; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); color: #2A2421; }
+  .mobile-menu.hidden { display: none; }
+  .mobile-link { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.5rem 0; text-decoration: none; color: #2A2421; }
+  .mobile-inquire { text-align: center; background-color: #C84B31; color: #fff; margin-top: 1rem; border: none; padding: 0.75rem 2rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; display: inline-block; border-radius: 4px; }
 
   /* HERO */
   .hero {
@@ -36,14 +63,15 @@
     background-image: repeating-linear-gradient(45deg, transparent, transparent 40px,
       rgba(212,160,23,0.04) 40px, rgba(212,160,23,0.04) 41px);
   }
-  .logo-container { position: relative; z-index: 2; margin-bottom: 30px; }
-  .logo-container img {
+  .hero .logo-container { position: relative; z-index: 2; margin-bottom: 30px; margin-top: 80px; }
+  .hero .logo-container img {
     width: 220px; height: 220px; object-fit: contain;
     filter: drop-shadow(0 8px 32px rgba(212,160,23,0.4));
     animation: float 4s ease-in-out infinite;
   }
   @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
-  .hero-tagline { font-family:'Cinzel',serif; font-size:11px; letter-spacing:6px; color:var(--gold); text-transform:uppercase; margin-bottom:16px; position:relative; z-index:2; }
+  .hero-tagline { font-family:'Cinzel',serif; font-size:11px; letter-spacing:6px; color:var(--gold); text-transform:uppercase; margin-bottom:16px; position:relative; z-index:2; text-align: justify; text-align-last: justify; -moz-text-align-last: justify; width: 100%; max-width: 560px; }
+  @media (max-width: 768px) { .hero-tagline { text-align: center; text-align-last: center; -moz-text-align-last: center; } }
   .hero h1 { font-family:'Playfair Display',serif; font-size:clamp(36px,6vw,72px); color:#fff; text-align:center; line-height:1.1; position:relative; z-index:2; margin-bottom:20px; }
   .hero h1 span { color:var(--gold); font-style:italic; }
   .hero-sub { font-size:16px; color:rgba(255,255,255,0.75); text-align:center; max-width:560px; line-height:1.7; position:relative; z-index:2; margin-bottom:40px; font-weight:300; }
@@ -201,7 +229,7 @@
   .contact-card { background:var(--dark); padding:24px 36px; border-radius:4px; display:flex; align-items:center; gap:14px; min-width:220px; }
   .contact-card .icon { font-size:24px; }
   .contact-card .info label { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px; }
-  .contact-card .info span { color:#fff; font-size:14px; font-weight:300; }
+  .contact-card .info span, .contact-card .info a { color:#fff; font-size:14px; font-weight:300; text-decoration: none; }
   footer { background:var(--dark); padding:32px 40px; text-align:center; }
   footer p { color:rgba(255,255,255,0.3); font-size:12px; letter-spacing:1px; }
   footer span { color:var(--gold); }
@@ -214,6 +242,35 @@
 </style>
 </head>
 <body>
+
+<!-- Navigation -->
+<nav id="navbar" class="navbar">
+  <div class="container nav-container">
+    <div class="logo-container">
+      <a href="index.html" class="logo">VISIT AFRICA</a>
+      <span id="logo-subtitle" class="logo-subtitle">Tours & Travel</span>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html#destinations">Tourism Activities</a>
+      <a href="index.html#destinations">Destinations</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#destinations" class="btn-inquire">Inquire Now</a>
+    </div>
+
+    <button id="mobile-menu-btn" class="mobile-menu-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu hidden">
+    <a href="index.html#destinations" class="mobile-link">Tourism Activities</a>
+    <a href="index.html#destinations" class="mobile-link">Destinations</a>
+    <a href="index.html#about" class="mobile-link">About</a>
+    <a href="index.html#destinations" class="btn-inquire mobile-inquire">Inquire Now</a>
+  </div>
+</nav>
 
 <!-- HERO -->
 <div class="hero">
@@ -474,7 +531,7 @@
     <!-- OTHER AFRICAN COUNTRIES -->
     <div class="itin-country-group">
       <div class="itin-country-label">🌍 Other African Countries</div>
-      <div class="country-hero" style="grid-template-columns:1fr 1fr;">
+      <div class="country-hero">
         <div class="country-info">
           <h2 style="font-size:26px;">Your Dream Destination</h2>
           <div class="subtitle">All of Africa is Within Reach</div>

@@ -509,7 +509,7 @@ a {
 
 .tags {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 0.5rem;
 }
 
@@ -518,6 +518,10 @@ a {
   color: rgba(42, 36, 33, 0.8);
   border-bottom: 1px solid rgba(217, 210, 199, 0.6);
   padding-bottom: 0.25rem;
+}
+
+.tag:last-child {
+  border-bottom: none;
 }
 
 .best-time {
