@@ -25,23 +25,23 @@
 
   /* Navigation */
   .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-  .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 50; padding: 1.8rem 0; transition: all 0.5s cubic-bezier(.25,.46,.45,.94); color: #fff; text-decoration: none; font-family: 'Plus Jakarta Sans', sans-serif; }
+  .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 50; padding: 1.8rem 0; transition: all 0.5s cubic-bezier(.25,.46,.45,.94); color: var(--dark); text-decoration: none; font-family: 'Plus Jakarta Sans', sans-serif; }
   .navbar.scrolled { background-color: rgba(250, 250, 247, 0.85); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); padding: 0.8rem 0; box-shadow: 0 1px 40px rgba(0,0,0,0.06); color: var(--dark); }
   .nav-container { display: flex; justify-content: space-between; align-items: center; }
   .logo-container { display: flex; flex-direction: column; }
-  .navbar .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; letter-spacing: 0.18em; color: inherit; text-decoration: none; transition: color 0.3s; }
+  .navbar .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; letter-spacing: 0.18em; color: var(--gold); text-decoration: none; transition: color 0.3s; }
   .navbar.scrolled .logo { color: var(--gold); }
-  .logo-subtitle { font-size: 0.55rem; font-weight: 600; letter-spacing: 0.35em; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); margin-top: -1px; transition: all 0.4s; }
+  .logo-subtitle { font-size: 0.55rem; font-weight: 600; letter-spacing: 0.35em; text-transform: uppercase; color: var(--deep-green); margin-top: -1px; transition: all 0.4s; }
   .navbar.scrolled .logo-subtitle { opacity: 0; visibility: hidden; }
   .nav-links { display: none; align-items: center; gap: 2.8rem; }
   @media (min-width: 768px) { .nav-links { display: flex; } }
-  .nav-links a:not(.btn-inquire) { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.85); transition: all 0.3s; text-decoration: none; position: relative; }
+  .nav-links a:not(.btn-inquire) { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--deep-green); transition: all 0.3s; text-decoration: none; position: relative; }
   .nav-links a:not(.btn-inquire)::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1.5px; background: var(--gold); transition: width 0.3s; }
   .nav-links a:not(.btn-inquire):hover::after { width: 100%; }
   .navbar.scrolled .nav-links a:not(.btn-inquire) { color: var(--dark); }
   .nav-links a:not(.btn-inquire):hover { color: var(--gold) !important; }
-  .btn-inquire { padding: 0.7rem 1.8rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; background-color: rgba(255,255,255,0.15); backdrop-filter: blur(10px); color: #fff; transition: all 0.4s cubic-bezier(.25,.46,.45,.94); cursor: pointer; text-decoration: none; display: inline-block; border-radius: 50px; border: 1px solid rgba(255,255,255,0.2); }
-  .btn-inquire:hover { background-color: rgba(255,255,255,0.25); transform: translateY(-1px); }
+  .btn-inquire { padding: 0.7rem 1.8rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; background-color: var(--gold); color: #fff; transition: all 0.4s cubic-bezier(.25,.46,.45,.94); cursor: pointer; text-decoration: none; display: inline-block; border-radius: 50px; border: 1px solid var(--gold); }
+  .btn-inquire:hover { background-color: var(--orange); transform: translateY(-1px); border-color: var(--orange); }
   .navbar.scrolled .btn-inquire { background-color: var(--gold); color: #fff; border-color: var(--gold); backdrop-filter: none; }
   .navbar.scrolled .btn-inquire:hover { background-color: var(--orange); border-color: var(--orange); box-shadow: 0 8px 24px rgba(200,75,49,0.25); }
   .mobile-menu-btn { display: block; background: none; border: none; color: inherit; cursor: pointer; }
@@ -54,39 +54,41 @@
 
   /* HERO */
   .hero {
-    background: linear-gradient(160deg, #0f0d0b 0%, #1a1714 30%, #2e2723 60%, #3d3530 100%);
+    background: #fff;
     min-height: 100vh; display: flex; flex-direction: column;
     align-items: center; justify-content: center;
     position: relative; overflow: hidden; padding: 80px 40px;
   }
   .hero::before {
     content: ''; position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 15% 50%, rgba(200,75,49,0.12) 0%, transparent 55%),
-                radial-gradient(ellipse at 85% 20%, rgba(200,75,49,0.08) 0%, transparent 45%),
-                radial-gradient(circle at 50% 80%, rgba(200,75,49,0.05) 0%, transparent 40%);
+    background: radial-gradient(ellipse at 15% 50%, rgba(160,82,45,0.15) 0%, transparent 55%),
+                radial-gradient(ellipse at 85% 20%, rgba(139,69,19,0.1) 0%, transparent 45%),
+                radial-gradient(circle at 50% 80%, rgba(205,133,63,0.08) 0%, transparent 40%);
   }
   .hero-pattern {
     position: absolute; inset: 0; opacity: 0.4;
     background-image: repeating-linear-gradient(45deg, transparent, transparent 60px,
-      rgba(200,75,49,0.02) 60px, rgba(200,75,49,0.02) 61px);
+      rgba(255,255,255,0.02) 60px, rgba(255,255,255,0.02) 61px);
   }
   .hero .logo-container { position: relative; z-index: 2; margin-bottom: 36px; margin-top: 80px; }
   .hero .logo-container img {
     width: 200px; height: 200px; object-fit: contain;
-    filter: drop-shadow(0 12px 40px rgba(200,75,49,0.3));
+    filter: drop-shadow(0 12px 40px rgba(0,0,0,0.4));
     animation: float 5s ease-in-out infinite;
   }
   @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
   .hero-tagline { font-family:'Playfair Display', serif; font-size:10px; letter-spacing:7px; color:var(--gold); text-transform:uppercase; margin-bottom:20px; position:relative; z-index:2; text-align: justify; text-align-last: justify; -moz-text-align-last: justify; width: 100%; max-width: 520px; opacity: 0.9; }
   @media (max-width: 768px) { .hero-tagline { text-align: center; text-align-last: center; -moz-text-align-last: center; } }
-  .hero h1 { font-family:'Playfair Display',serif; font-size:clamp(34px,5.5vw,68px); color:#fff; text-align:center; line-height:1.08; position:relative; z-index:2; margin-bottom:24px; font-weight:500; letter-spacing: -0.02em; }
+  .hero h1 { font-family:'Playfair Display',serif; font-size:clamp(34px,5.5vw,68px); color:var(--deep-green); text-align:center; line-height:1.08; position:relative; z-index:2; margin-bottom:24px; font-weight:500; letter-spacing: -0.02em; }
   .hero h1 span { color:var(--gold); font-style:italic; font-weight:400; }
-  .hero-sub { font-size:15px; color:rgba(255,255,255,0.6); text-align:center; max-width:520px; line-height:1.8; position:relative; z-index:2; margin-bottom:48px; font-weight:300; letter-spacing: 0.01em; }
+  .hero-sub { font-size:15px; color:#666; text-align:center; max-width:520px; line-height:1.8; position:relative; z-index:2; margin-bottom:48px; font-weight:300; letter-spacing: 0.01em; }
   .hero-divider { display:flex; align-items:center; gap:18px; margin-bottom:48px; position:relative; z-index:2; }
   .hero-divider .line { width:60px; height:1px; background:linear-gradient(90deg, transparent, var(--gold)); opacity:0.5; }
   .hero-divider .diamond { width:6px; height:6px; background:var(--gold); transform:rotate(45deg); opacity:0.8; }
-  .scroll-hint { position:absolute; bottom:40px; left:50%; transform:translateX(-50%); z-index:2; display:flex; flex-direction:column; align-items:center; gap:10px; color:rgba(255,255,255,0.35); font-size:10px; letter-spacing:3px; text-transform:uppercase; }
-  .scroll-hint .arrow { width:18px; height:18px; border-right:1px solid rgba(255,255,255,0.3); border-bottom:1px solid rgba(255,255,255,0.3); transform:rotate(45deg); animation:bounce 2.5s ease-in-out infinite; }
+  .scroll-hint { position:absolute; bottom:40px; left:50%; transform:translateX(-50%); z-index:2; display:flex; flex-direction:column; align-items:center; gap:10px; color:var(--gold); font-size:10px; letter-spacing:3px; text-transform:uppercase; font-weight:700; transition: color 0.3s; cursor: pointer; }
+  .scroll-hint:hover { color:var(--orange); }
+  .scroll-hint .arrow { width:18px; height:18px; border-right:2px solid var(--gold); border-bottom:2px solid var(--gold); transform:rotate(45deg); animation:bounce 2.5s ease-in-out infinite; transition: border-color 0.3s; }
+  .scroll-hint:hover .arrow { border-color:var(--orange); }
   @keyframes bounce { 0%,100%{transform:rotate(45deg) translateY(0)} 50%{transform:rotate(45deg) translateY(8px)} }
 
   /* STORY */
@@ -322,25 +324,7 @@
 </div>
 
 <!-- EXPERIENCES -->
-<div class="experiences-section">
-  <div class="experiences-inner">
-    <div class="section-label">What We Offer</div>
-    <h2 class="section-title">Choose Your <span>Experience</span></h2>
-    <p style="color:#777;max-width:560px;line-height:1.8;font-size:15px;font-weight:300;margin-top:8px;">Every traveller is different. Choose the type of experience that speaks to your soul — we'll build the perfect journey around it.</p>
-    <div class="exp-grid">
-      <div class="exp-card"><span class="exp-icon">🦁</span><h3>Wildlife & Nature</h3><p>Safari game drives, gorilla trekking, birdwatching, whale watching, night safaris, canoe safaris, and national park visits.</p></div>
-      <div class="exp-card"><span class="exp-icon">🏔️</span><h3>Adventure & Outdoors</h3><p>Mountain climbing, rock climbing, dune bashing, camel trekking, skydiving, bungee jumping, hot-air balloon rides.</p></div>
-      <div class="exp-card"><span class="exp-icon">🏛️</span><h3>Culture & History</h3><p>Historical monuments, ancient ruins, UNESCO heritage sites, cultural festivals, traditional dance performances.</p></div>
-      <div class="exp-card"><span class="exp-icon">🌊</span><h3>Water Activities</h3><p>White-water rafting, scuba diving, kayaking, sailing, snorkeling, paddleboarding, boat tours, sunset cruises.</p></div>
-      <div class="exp-card"><span class="exp-icon">🍜</span><h3>Food & Culture</h3><p>Food tours, local brew tasting, cooking classes with locals, coffee ceremonies, spice farm visits, street food tours.</p></div>
-      <div class="exp-card"><span class="exp-icon">🏖️</span><h3>Beach & Relaxation</h3><p>Sunbathing, island hopping, beach yoga, beach bonfires, beach volleyball, and picnics in paradise.</p></div>
-      <div class="exp-card"><span class="exp-icon">🌿</span><h3>Eco & Rural Tourism</h3><p>Eco-lodge stays, conservation volunteering, rural farm living, tree planting, and community engagement.</p></div>
-      <div class="exp-card"><span class="exp-icon">🎶</span><h3>Entertainment & Nightlife</h3><p>Live music concerts, beach parties, cultural music shows, night markets, and desert campfire evenings.</p></div>
-    </div>
-  </div>
-</div>
-
-<!-- PACKAGES -->
+<!-- PACKAGES --><!-- PACKAGES -->
 <div class="packages-section">
   <div class="packages-inner">
     <div class="packages-header">
@@ -574,27 +558,13 @@
 </div>
 
 <!-- WHY US -->
-<div class="whyus-section">
-  <div class="whyus-inner">
-    <div class="section-label">Why Choose Us</div>
-    <h2 class="section-title" style="color:#fff;text-align:center;">Your <span style="color:var(--gold)">Trust</span> is Our Foundation</h2>
-    <div class="whyus-grid">
-      <div class="why-card"><div class="why-num">01</div><h3>People-Centred</h3><p>We put people first — both our clients and the communities we visit. Every tour supports local guides, businesses, and families.</p></div>
-      <div class="why-card"><div class="why-num">02</div><h3>Authentic Experiences</h3><p>We don't do tourist traps. We connect you with real Africa — its true culture, genuine communities, and unfiltered beauty.</p></div>
-      <div class="why-card"><div class="why-num">03</div><h3>Expert Local Guides</h3><p>Our professionally trained guides know Africa intimately — its stories, secrets, and the best moments to be in the right place.</p></div>
-      <div class="why-card"><div class="why-num">04</div><h3>Fully Tailor-Made</h3><p>Choose your country, your activities, your pace, your budget. We build the journey around you, not the other way around.</p></div>
-      <div class="why-card"><div class="why-num">05</div><h3>All Budget Levels</h3><p>From budget-conscious explorers to luxury seekers — we have beautifully crafted packages for every type of traveller.</p></div>
-      <div class="why-card"><div class="why-num">06</div><h3>Responsible Tourism</h3><p>We travel with purpose. Our tours minimise environmental impact, support conservation, and give back to local communities.</p></div>
-    </div>
-  </div>
-</div>
-
-<!-- CONTACT -->
+<!-- CONTACT --><!-- CONTACT -->
 <div class="contact-section">
   <h2>Ready to Explore <span>Africa?</span></h2>
   <p>Get in touch and let us craft your perfect African journey</p>
   <div class="contact-cards">
     <div class="contact-card"><span class="icon">✉️</span><div class="info"><label>Email Us</label><span><a href="mailto:visitafrica21@gmail.com">visitafrica21@gmail.com</a></span></div></div>
+    <div class="contact-card"><span class="icon">📱</span><div class="info"><label>Call Us</label><span><a href="tel:+256770307890">+256 770 307890</a> · <a href="tel:+32476821973">+32 476 821973</a></span></div></div>
     <div class="contact-card"><span class="icon">🌍</span><div class="info"><label>We Cover</label><span>Uganda · Tanzania · Kenya · Rwanda · Benin · Morocco · Algeria · More</span></div></div>
     <div class="contact-card"><span class="icon">📅</span><div class="info"><label>All Year Round</label><span>Tours available every month — we guide on timing</span></div></div>
   </div>
@@ -615,4 +585,13 @@ function showItin(id, btn, group) {
   btnParent.querySelectorAll('.itin-btn').forEach(b => b.classList.remove('active'));
   // hide sibling panels (the panels after the tab row)
   let el = btnParent.nextElementSibling;
-  w
+  while(el) {
+    if(el.classList.contains('itin-panel')) el.classList.remove('active');
+    el = el.nextElementSibling;
+  }
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>

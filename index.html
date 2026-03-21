@@ -26,7 +26,7 @@
       </div>
 
       <div class="nav-links">
-        <a href="#destinations">Tourism Activities</a>
+        <a href="#what-to-do">Tourism Activities</a>
         <a href="#destinations">Destinations</a>
         <a href="#about">About</a>
         <a href="#destinations" class="btn-inquire">Inquire Now</a>
@@ -39,7 +39,7 @@
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="mobile-menu hidden">
-      <a href="#destinations" class="mobile-link">Tourism Activities</a>
+      <a href="#what-to-do" class="mobile-link">Tourism Activities</a>
       <a href="#destinations" class="mobile-link">Destinations</a>
       <a href="#about" class="mobile-link">About</a>
       <a href="#destinations" class="btn-inquire mobile-inquire">Inquire Now</a>
@@ -69,96 +69,82 @@
     </div>
   </header>
 
-  <!-- About Section -->
-  <section id="about" class="intro-section" style="text-align: left;">
-    <div class="container">
-      <div style="display: flex; flex-wrap: wrap; gap: 4rem;">
-        <div class="slide-up" id="our-story" style="flex: 1 1 400px;">
-          <svg class="intro-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1.5rem; margin-left: 0;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-          <h2 class="section-title">Our Story</h2>
-          <div class="divider" style="margin: 1.5rem 0; width: 60px;"></div>
-          <p class="section-desc" style="max-width: 100%; margin-bottom: 1rem;">We are a people-centred tourism company creating authentic African experiences. Our mission is to connect travelers with the real Africa i.e. its people, cultures.</p>
-          <p class="section-desc" style="max-width: 100%; margin-bottom: 1rem;">From lush rainforests to golden deserts, from gorillas to ancient kingdoms. Africa offers the world's most diverse and authentic travel experiences.</p>
-          <p class="section-desc" style="max-width: 100%;">Our company connects you to nature, culture, and adventure with professionally guided tours and tailor-made packages.</p>
-        </div>
-        <div class="slide-up" id="our-impact" style="flex: 1 1 400px; transition-delay: 0.2s;">
-          <svg class="intro-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1.5rem; margin-left: 0;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          <h2 class="section-title">Our Impact</h2>
-          <div class="divider" style="margin: 1.5rem 0; width: 60px;"></div>
-          <p class="section-desc" style="max-width: 100%;">Every journey leaves a deeper understanding of who we are and what we aspire to become as a continent.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+
 
   <!-- What Can I Do Section -->
-  <section id="what-to-do" style="padding: 8rem 0; background-color: #1a1714;">
+  <section id="what-to-do" style="padding: 8rem 0; background-color: var(--bg);">
     <div class="container">
       <div class="section-header text-center slide-up" style="margin-bottom: 4rem;">
         <p style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--primary); margin-bottom: 1rem;">Experiences</p>
-        <h2 style="font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3rem); color: #fff; margin-bottom: 1.2rem; font-weight: 500;">What Can I Do In Africa?</h2>
-        <p style="color: rgba(255,255,255,0.45); max-width: 560px; margin: 0 auto; font-size: 0.95rem; font-weight: 300; line-height: 1.8;">From thrilling safaris to ancient cultural encounters — Africa offers experiences found nowhere else on Earth.</p>
+        <h2 style="font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3rem); color: var(--fg); margin-bottom: 1.2rem; font-weight: 500;">What Can I Do In Africa?</h2>
+        <p style="color: var(--muted-fg); max-width: 560px; margin: 0 auto; font-size: 0.95rem; font-weight: 300; line-height: 1.8;">From thrilling safaris to ancient cultural encounters — Africa offers experiences found nowhere else on Earth.</p>
       </div>
       <div class="grid" style="margin-top: 0;">
         
         <!-- Category 1: Wildlife & Nature -->
-        <div class="slide-up" style="background: linear-gradient(160deg, #242019, #1e1b17); padding: 3rem 2.5rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.06); transition: all 0.4s; position: relative; overflow: hidden;">
-          <div style="font-size: 3rem; text-align: center; margin-bottom: 1.5rem;">🦁</div>
-          <h3 style="color: #fff; margin-bottom: 1.8rem; font-size: 1.25rem; font-family: var(--font-serif); font-weight: 500; text-align: center; letter-spacing: -0.01em;">Wildlife &amp; Nature</h3>
+        <div class="card slide-up" style="padding: 2.5rem; border-radius: 20px;">
+          <div style="margin-bottom: 1.5rem; overflow: hidden; border-radius: 12px; height: 180px;">
+            <img src="images/hero-safari.jpg" alt="Wildlife & Nature" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <h3 style="color: var(--fg); margin-bottom: 1.8rem; font-size: 1.25rem; font-family: var(--font-serif); font-weight: 500; text-align: center; letter-spacing: -0.01em;">Wildlife &amp; Nature</h3>
           <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Safari game drives</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Walking safaris</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Birdwatching</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Whale watching</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Gorilla trekking</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Chimpanzee trekking</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Elephant tracking</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Wildlife photography</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Night safaris</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Canoe safaris</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">River cruises</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Wildlife sanctuaries</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">National parks</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Botanical gardens</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Safari game drives</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Walking safaris</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Birdwatching</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Whale watching</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Gorilla trekking</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Chimpanzee trekking</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Elephant tracking</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Wildlife photography</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Night safaris</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Canoe safaris</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">River cruises</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Wildlife sanctuaries</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">National parks</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Botanical gardens</span>
           </div>
         </div>
 
         <!-- Category 2: Adventure & Outdoor -->
-        <div class="slide-up" style="background: linear-gradient(160deg, #242019, #1e1b17); padding: 3rem 2.5rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.06); transition: all 0.4s; position: relative; overflow: hidden; transition-delay: 0.1s;">
-          <div style="font-size: 3rem; text-align: center; margin-bottom: 1.5rem;">🏔️</div>
-          <h3 style="color: #fff; margin-bottom: 1.8rem; font-size: 1.25rem; font-family: var(--font-serif); font-weight: 500; text-align: center; letter-spacing: -0.01em;">Adventure &amp; Outdoor Activities</h3>
+        <div class="card slide-up" style="padding: 2.5rem; border-radius: 20px; transition-delay: 0.1s;">
+          <div style="margin-bottom: 1.5rem; overflow: hidden; border-radius: 12px; height: 180px;">
+            <img src="images/tanzania-kili.jpg" alt="Adventure & Outdoor" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <h3 style="color: var(--fg); margin-bottom: 1.8rem; font-size: 1.25rem; font-family: var(--font-serif); font-weight: 500; text-align: center; letter-spacing: -0.01em;">Adventure &amp; Outdoor Activities</h3>
           <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Hiking</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Mountain climbing</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Rock climbing</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Dune bashing</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Camel trekking</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Horseback riding</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Mountain biking</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Ziplining</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Paragliding</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Skydiving</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Bungee jumping</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Camping</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Quad biking (ATV)</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Hot-air balloon rides</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Hiking</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Mountain climbing</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Rock climbing</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Dune bashing</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Camel trekking</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Horseback riding</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Mountain biking</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Ziplining</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Paragliding</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Skydiving</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Bungee jumping</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Camping</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Quad biking (ATV)</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Hot-air balloon rides</span>
           </div>
         </div>
 
         <!-- Category 3: Cultural & Historical -->
-        <div class="slide-up" style="background: linear-gradient(160deg, #242019, #1e1b17); padding: 3rem 2.5rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.06); transition: all 0.4s; position: relative; overflow: hidden; transition-delay: 0.2s;">
-          <div style="font-size: 3rem; text-align: center; margin-bottom: 1.5rem;">🏛️</div>
-          <h3 style="color: #fff; margin-bottom: 1.8rem; font-size: 1.25rem; font-family: var(--font-serif); font-weight: 500; text-align: center; letter-spacing: -0.01em;">Cultural &amp; Historical Activities</h3>
+        <div class="card slide-up" style="padding: 2.5rem; border-radius: 20px; transition-delay: 0.2s;">
+          <div style="margin-bottom: 1.5rem; overflow: hidden; border-radius: 12px; height: 180px;">
+            <img src="images/maasai-culture.jpg" alt="Cultural & Historical" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <h3 style="color: var(--fg); margin-bottom: 1.8rem; font-size: 1.25rem; font-family: var(--font-serif); font-weight: 500; text-align: center; letter-spacing: -0.01em;">Cultural &amp; Historical Activities</h3>
           <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Historical monuments</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Museums</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Ancient ruins</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Old cities</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">UNESCO heritage sites</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Cultural festivals</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Traditional dance</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Traditional villages</span>
-            <span style="background: rgba(200,75,49,0.12); color: rgba(255,255,255,0.8); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Storytelling nights</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Historical monuments</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Museums</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Ancient ruins</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Old cities</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">UNESCO heritage sites</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Cultural festivals</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Traditional dance</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Traditional villages</span>
+            <span style="background: rgba(200,75,49,0.06); color: var(--fg); padding: 0.45rem 1rem; border-radius: 50px; font-size: 0.78rem; font-weight: 400; border: 1px solid rgba(200,75,49,0.15);">Storytelling nights</span>
           </div>
         </div>
 
@@ -170,7 +156,7 @@
   <section id="destinations" class="destinations-section">
     <div class="container">
       <div class="section-header slide-up">
-        <h2 class="section-title">Countries We Cover</h2>
+        <h2 class="section-title">Choose Your Destination</h2>
         <p class="section-desc">We specialize in unforgettable travel experiences across Africa's most iconic landscapes.</p>
       </div>
 
@@ -407,33 +393,65 @@
   <section id="why-choose-us" class="why-choose-us-section">
     <div class="container">
       <div class="section-header text-center slide-up">
-        <h2 class="section-title">Why Choose Us</h2>
+        <h2 class="section-title">Why Choose Us?</h2>
         <div class="divider"></div>
       </div>
       <div class="why-grid">
         <div class="why-item slide-up">
-          <svg class="why-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <h3>Customized tour packages</h3>
+          <div style="font-size: 3rem; color: var(--primary); font-weight: 400; line-height: 1; margin-bottom: 1.2rem; font-family: var(--font-serif); opacity: 0.5;">01</div>
+          <h3>People-Centred</h3>
+          <p style="font-size: 0.95rem; color: var(--muted-fg); margin-top: 0.8rem; line-height: 1.6;">We put people first — both our clients and the communities we visit. Every tour supports local guides, businesses, and families.</p>
         </div>
         <div class="why-item slide-up" style="transition-delay: 0.1s;">
-          <svg class="why-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          <h3>Budget, standard & luxury options</h3>
+          <div style="font-size: 3rem; color: var(--primary); font-weight: 400; line-height: 1; margin-bottom: 1.2rem; font-family: var(--font-serif); opacity: 0.5;">02</div>
+          <h3>Authentic Experiences</h3>
+          <p style="font-size: 0.95rem; color: var(--muted-fg); margin-top: 0.8rem; line-height: 1.6;">We don't do tourist traps. We connect you with real Africa — its true culture, genuine communities, and unfiltered beauty.</p>
         </div>
         <div class="why-item slide-up" style="transition-delay: 0.2s;">
-          <svg class="why-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="m14.5 13.5-2.5-2.5V8"/></svg>
-          <h3>Cultural authenticity</h3>
+          <div style="font-size: 3rem; color: var(--primary); font-weight: 400; line-height: 1; margin-bottom: 1.2rem; font-family: var(--font-serif); opacity: 0.5;">03</div>
+          <h3>Expert Local Guides</h3>
+          <p style="font-size: 0.95rem; color: var(--muted-fg); margin-top: 0.8rem; line-height: 1.6;">Our professionally trained guides know Africa intimately — its stories, secrets, and the best moments to be in the right place.</p>
         </div>
         <div class="why-item slide-up" style="transition-delay: 0.3s;">
-          <svg class="why-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 7h.01"/><path d="M17 7h.01"/><path d="M7 17h.01"/><path d="M17 17h.01"/></svg>
-          <h3>Safe & reliable transport</h3>
+          <div style="font-size: 3rem; color: var(--primary); font-weight: 400; line-height: 1; margin-bottom: 1.2rem; font-family: var(--font-serif); opacity: 0.5;">04</div>
+          <h3>Fully Tailor-Made</h3>
+          <p style="font-size: 0.95rem; color: var(--muted-fg); margin-top: 0.8rem; line-height: 1.6;">Choose your country, your activities, your pace, your budget. We build the journey around you, not the other way around.</p>
         </div>
         <div class="why-item slide-up" style="transition-delay: 0.4s;">
-          <svg class="why-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <h3>24/7 customer support</h3>
+          <div style="font-size: 3rem; color: var(--primary); font-weight: 400; line-height: 1; margin-bottom: 1.2rem; font-family: var(--font-serif); opacity: 0.5;">05</div>
+          <h3>All Budget Levels</h3>
+          <p style="font-size: 0.95rem; color: var(--muted-fg); margin-top: 0.8rem; line-height: 1.6;">From budget-conscious explorers to luxury seekers — we have beautifully crafted packages for every type of traveller.</p>
         </div>
         <div class="why-item slide-up" style="transition-delay: 0.5s;">
-          <svg class="why-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          <h3>Professional local guides</h3>
+          <div style="font-size: 3rem; color: var(--primary); font-weight: 400; line-height: 1; margin-bottom: 1.2rem; font-family: var(--font-serif); opacity: 0.5;">06</div>
+          <h3>Responsible Tourism</h3>
+          <p style="font-size: 0.95rem; color: var(--muted-fg); margin-top: 0.8rem; line-height: 1.6;">We travel with purpose. Our tours minimise environmental impact, support conservation, and give back to local communities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section moved here -->
+  <section id="about" class="intro-section" style="text-align: left;">
+    <div class="container">
+      <div style="display: flex; flex-wrap: wrap; gap: 4rem;">
+        <div class="slide-up" id="our-story" style="flex: 1 1 400px;">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+            <h2 class="section-title" style="margin: 0; display: inline-flex; align-items: center;">Our Story</h2>
+            <svg class="intro-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin: 0; flex-shrink: 0;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <div class="divider" style="margin: 1.5rem 0; width: 60px;"></div>
+          <p class="section-desc" style="max-width: 100%; margin-bottom: 1rem;">We are a people-centred tourism company creating authentic African experiences. Our mission is to connect travelers with the real Africa i.e. its people, cultures.</p>
+          <p class="section-desc" style="max-width: 100%; margin-bottom: 1rem;">From lush rainforests to golden deserts, from gorillas to ancient kingdoms. Africa offers the world's most diverse and authentic travel experiences.</p>
+          <p class="section-desc" style="max-width: 100%;">Our company connects you to nature, culture, and adventure with professionally guided tours and tailor-made packages.</p>
+        </div>
+        <div class="slide-up" id="our-impact" style="flex: 1 1 400px; transition-delay: 0.2s;">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+            <h2 class="section-title" style="margin: 0; display: inline-flex; align-items: center;">Our Impact</h2>
+            <svg class="intro-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin: 0; flex-shrink: 0;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <div class="divider" style="margin: 1.5rem 0; width: 60px;"></div>
+          <p class="section-desc" style="max-width: 100%;">Every journey leaves a deeper understanding of who we are and what we aspire to become as a continent.</p>
         </div>
       </div>
     </div>
@@ -466,7 +484,7 @@
         <div class="footer-links">
           <h4>Navigation</h4>
           <ul>
-            <li><a href="#destinations">Tourism Activities</a></li>
+            <li><a href="#what-to-do">Tourism Activities</a></li>
             <li><a href="brochure.html">Destinations</a></li>
             <li><a href="#about">About</a></li>
           </ul>
@@ -478,6 +496,15 @@
             <li><a href="#our-story">Our Story</a></li>
             <li><a href="#our-impact">Impact</a></li>
             <li><a href="mailto:visitafrica21@gmail.com">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+256770307890">+256 770 307890</a></li>
+            <li><a href="tel:+32476821973">+32 476 821973</a></li>
+            <li><a href="mailto:visitafrica21@gmail.com">visitafrica21@gmail.com</a></li>
           </ul>
         </div>
       </div>
